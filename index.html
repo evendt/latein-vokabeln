@@ -405,7 +405,7 @@
         <label class="field"><span>Wortart</span>
           <select id="cArt">
             <option>Substantiv</option><option>Verb</option><option>Adjektiv</option><option>Adverb</option><option>Pronomen</option>
-            <option>Konjunktion</option><option>Präposition</option><option>Fragewort</option><option>Wendung</option><option>Eigenname</option>
+            <option>Konjunktion</option><option>Subjunktion</option><option>Zahlwort</option><option>Präposition</option><option>Fragewort</option><option>Wendung</option><option>Eigenname</option>
           </select></label>
         <label class="field"><span>Deutsch</span><input type="text" id="cDe" placeholder="z. B. der Freund"><small>Mehrere Bedeutungsgruppen mit ; trennen, z. B. „erstreben; angreifen“</small></label>
         <label class="field"><span>Merkhilfe (freiwillig)</span><input type="text" id="cHilfe" placeholder="z. B. e. amicable"></label>
@@ -442,7 +442,7 @@
      lektion : Nummer der Lektion (Zahl)
      la      : Lernform wie im Lehrbuch (mit Grammatik-Angaben)
      wortart : "Substantiv", "Verb", "Adjektiv", "Adverb", "Pronomen",
-               "Konjunktion", "Fragewort", "Wendung", "Eigenname" …
+               "Konjunktion", "Subjunktion", "Zahlwort", "Fragewort", "Wendung", "Eigenname" …
      de      : Liste der Bedeutungen. Jeder Listeneintrag = eine Gruppe,
                die im Buch durch ";" getrennt ist.
      zusatz  : (optional) Konstruktion, z. B. "m. Akk."
@@ -454,6 +454,60 @@
    "la" nachträglich ändern, beginnt dieses Wort wieder bei Fach 1.
    ========================================================================== */
 const VOKABELN = [
+  // ---------------- Lektion 32 · Lernwörter ----------------
+  { lektion: 32, la: "Faustulus", wortart: "Eigenname", de: ["Faustulus (Hirte, der Romulus und Remus entdeckte)"] },
+  { lektion: 32, la: "ācer, ācris, ācre", wortart: "Adjektiv", de: ["energisch, heftig, scharf"] },
+  { lektion: 32, la: "bibere, bibō, bibī", wortart: "Verb", de: ["trinken"], hilfe: "s. beber" },
+  { lektion: 32, la: "pellere, pellō, pepulī", wortart: "Verb", de: ["stoßen, schlagen, (ver)treiben"] },
+  { lektion: 32, la: "celer, celeris, celere", wortart: "Adjektiv", de: ["schnell"] },
+  { lektion: 32, la: "tamquam", wortart: "Adverb", de: ["wie"] },
+  // So im Buch gedruckt: „sīgnum“ mit Längenstrich (in Lektion 34 steht „signum“ ohne).
+  { lektion: 32, la: "sīgnum", wortart: "Substantiv", de: ["das Merkmal, das Zeichen", "die Statue"], hilfe: "Signal, e. sign" },
+  { lektion: 32, la: "Rōmulus / Remus", wortart: "Eigenname", de: ["Romulus / Remus (Zwillingsbrüder und sagenhafte Gründer Roms)"], kurz: "Rōmulus / Remus" },
+  { lektion: 32, la: "iuvenis, iuvenis m", wortart: "Substantiv", de: ["der junge Mann", "Adj. jung"] },
+  { lektion: 32, la: "comes, comitis m/f", wortart: "Substantiv", de: ["der (die) Begleiter(in), der Gefährte, die Gefährtin"] },
+  { lektion: 32, la: "mīles, mīlitis m", wortart: "Substantiv", de: ["der Soldat"], hilfe: "Militär" },
+  { lektion: 32, la: "repellere, repellō, reppulī", wortart: "Verb", de: ["zurückstoßen, abweisen, vertreiben"], hilfe: "pellere" },
+
+  // ---------------- Lektion 32 · Wiederholungswörter ----------------
+  { lektion: 32, la: "cōnsilium", wortart: "Substantiv", de: ["die Beratung, der Beschluss, der Plan, der Rat"], wdh: true },
+  { lektion: 32, la: "temptāre", wortart: "Verb", de: ["angreifen", "prüfen, versuchen"], wdh: true },
+  { lektion: 32, la: "mox", wortart: "Adverb", de: ["bald"], wdh: true },
+  { lektion: 32, la: "petere", wortart: "Verb", de: ["aufsuchen, (er)streben, bitten, verlangen", "angreifen"], wdh: true },
+  { lektion: 32, la: "portāre", wortart: "Verb", de: ["bringen, tragen"], wdh: true },
+  { lektion: 32, la: "aspicere", wortart: "Verb", de: ["erblicken, ansehen"], wdh: true },
+  { lektion: 32, la: "ingenium", wortart: "Substantiv", de: ["die Begabung, das Talent, der Verstand"], wdh: true },
+  { lektion: 32, la: "regiō", wortart: "Substantiv", de: ["das Gebiet, die Gegend, die Richtung"], wdh: true },
+  { lektion: 32, la: "auxilium", wortart: "Substantiv", de: ["die Hilfe"], wdh: true },
+  { lektion: 32, la: "saepe", wortart: "Adverb", de: ["oft"], wdh: true },
+
+  // ---------------- Lektion 33 · Lernwörter ----------------
+  { lektion: 33, la: "locus", wortart: "Substantiv", de: ["der Ort, der Platz, die Stelle"], hilfe: "Lokal" },
+  { lektion: 33, la: "novem", zusatz: "indekl.", wortart: "Zahlwort", de: ["neun"] },
+  { lektion: 33, la: "aspicere, aspiciō, aspexī", wortart: "Verb", de: ["erblicken, ansehen"] },
+  { lektion: 33, la: "ūnus, a, um", wortart: "Zahlwort", de: ["einer, ein einziger"], hilfe: "Unikat, e. one, i. uno" },
+  { lektion: 33, la: "ūnus ē / ex", zusatz: "m. Abl.", wortart: "Wendung", de: ["einer von"], kurz: "ūnus ē / ex" },
+  { lektion: 33, la: "fortis, e", wortart: "Adjektiv", de: ["kräftig, tapfer"], hilfe: "i. forte" },
+  { lektion: 33, la: "trīstis, e", wortart: "Adjektiv", de: ["traurig, unfreundlich"], hilfe: "trist" },
+  { lektion: 33, la: "dēfendere, dēfendō, dēfendī", zusatz: "ā m. Abl.", wortart: "Verb", de: ["abwehren, verteidigen (vor / gegen)"], hilfe: "defensiv" },
+  { lektion: 33, la: "trēs, trēs, tria", wortart: "Zahlwort", de: ["drei"], hilfe: "Tri-angel" },
+  { lektion: 33, la: "Amūlius", wortart: "Eigenname", de: ["Amulius (König von Alba Longa, Bruder des Numitor)"] },
+  { lektion: 33, la: "accūsāre, accūsō", wortart: "Verb", de: ["anklagen, beschuldigen"], hilfe: "Akkusativ, e. to accuse" },
+  { lektion: 33, la: "turpis, e", wortart: "Adjektiv", de: ["unanständig, hässlich, schändlich"] },
+  { lektion: 33, la: "postquam", zusatz: "m. Perf.", wortart: "Subjunktion", de: ["nachdem, als"], hilfe: "post, posteā" },
+  { lektion: 33, la: "Numitor, Numitōris m", wortart: "Eigenname", de: ["Numitor (König von Alba Longa, Großvater von Romulus und Remus)"] },
+  { lektion: 33, la: "dulcis, e", wortart: "Adjektiv", de: ["angenehm, süß"], hilfe: "f. doux, i. dolce" },
+  { lektion: 33, la: "crūdēlis, e", wortart: "Adjektiv", de: ["grausam"], hilfe: "e./f. cruel" },
+  { lektion: 33, la: "omnis, e", wortart: "Adjektiv", de: ["jeder, ganz", "Pl. alle"], hilfe: "Omnibus" },
+
+  // ---------------- Lektion 33 · Wiederholungswörter ----------------
+  { lektion: 33, la: "convenīre", wortart: "Verb", de: ["zusammenkommen, zusammenpassen, besuchen"], wdh: true },
+  { lektion: 33, la: "silva", wortart: "Substantiv", de: ["der Wald"], wdh: true },
+  { lektion: 33, la: "comprehendere", wortart: "Verb", de: ["begreifen, ergreifen, festnehmen"], wdh: true },
+  { lektion: 33, la: "dēlēre", wortart: "Verb", de: ["zerstören, vernichten"], wdh: true },
+  { lektion: 33, la: "tam", wortart: "Adverb", de: ["so"], wdh: true },
+  { lektion: 33, la: "parvus", wortart: "Adjektiv", de: ["klein, gering"], wdh: true },
+
   // ---------------- Lektion 34 · Lernwörter (S. 231) ----------------
   { lektion: 34, la: "quī, quae, quod", wortart: "Pronomen", de: ["welcher, welche, welches", "der, die, das"], kurz: "quī, quae, quod" },
   { lektion: 34, la: "idōneus, a, um", wortart: "Adjektiv", de: ["geeignet, passend"], hilfe: "i. idoneo" },
@@ -557,7 +611,7 @@ const VOKABELN = [
   // ---------------- Lektion 37 · Wiederholungswörter ----------------
   { lektion: 37, la: "castra", wortart: "Substantiv", de: ["das Lager"], wdh: true },
   { lektion: 37, la: "mūnīre", wortart: "Verb", de: ["bauen, befestigen, schützen"], wdh: true },
-  // UNSICHER: Zusatz „(ā m. Abl.)“ ist im Foto sehr klein gedruckt – bitte prüfen.
+  // Zusatz „(ā m. Abl.)“ durch Lektion 33 bestätigt.
   { lektion: 37, la: "dēfendere", zusatz: "ā m. Abl.", wortart: "Verb", de: ["abwehren, verteidigen (vor / gegen)"], wdh: true },
   { lektion: 37, la: "petere", wortart: "Verb", de: ["aufsuchen, (er)streben, bitten, verlangen", "angreifen"], wdh: true },
   { lektion: 37, la: "praestāre", wortart: "Verb", de: ["gewähren, leisten, zeigen"], wdh: true },
